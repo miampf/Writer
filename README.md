@@ -14,7 +14,7 @@ in Markdown. No subscriptions, no overly fancy features
 This project is written entirely in [nix](https://nixos.org), so you need nix
 to install it. I won't do an entire tutorial here, but it boils down to enabling
 [flakes](https://nixos.wiki/wiki/flakes), importing this flake like the following
-and then importing the default package under `inputs.writer.packages.default`.
+and then importing the default package under `inputs.writer.packages.${system}.default`.
 
 ```nix
 inputs = {
