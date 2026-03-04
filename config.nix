@@ -5,4 +5,9 @@
   globals.mapleader = " ";
 
   colorschemes.everforest.enable = true;
+
+  extraConfigVim = ''
+    autocmd! User GoyoEnter TwilightEnable
+    autocmd! User GoyoLeave TwilightDisable
+  '';
 }

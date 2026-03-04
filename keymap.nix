@@ -32,4 +32,12 @@
     options.silent = true;
     action = "<cmd>Yazi toggle<cr>";
   }
+
+  # goyo
+  {
+    mode = "n";
+    key = "<leader>z";
+    options.silent = true;
+    action = "<cmd>Goyo<cr>";
+  }
 ]
