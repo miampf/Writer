@@ -4,6 +4,13 @@
 
   globals.mapleader = " ";
 
+  opts = {
+    number = true;
+    relativenumber = true;
+
+    shiftwidth = 2;
+  };
+
   colorschemes.everforest.enable = true;
 
   extraConfigVim = ''
