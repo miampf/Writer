@@ -1,5 +1,6 @@
 {
   goyo.enable = true;
+  twilight.enable = true;
   render-markdown.enable = true;
   treesitter = {
     enable = true;
@@ -10,6 +11,7 @@
   airline.enable = true;
   telescope.enable = true;
   web-devicons.enable = true;
+  flash.enable = true;
   dashboard = {
     enable = true;
     settings.config = {
@@ -27,7 +29,7 @@
           icon = " ";
           desc = "File ";
           key = "f";
-          action = "Telescope find_files";
+          action = "Yazi cwd";
         }
         {
           icon = " ";
