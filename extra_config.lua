@@ -20,6 +20,15 @@ local function string_random(length)
     return table_concat(random_string)
 end
 
+local function get_current_branch()
+  local branch_fd = assert(io.popen('git branch --show-current'))
+  branch_fd:flush()
+  local branch = branch_fd:read('*all')
+  branch_fd:close()
+
+  return branch
+end
+
 -- This function creates a new "draft",
 -- aka a git branch with random naming.
 local function new_draft()
@@ -30,10 +39,7 @@ end
 -- This function merges a draft.
 local function merge_draft()
   -- get the current branch
-  local branch_fd = assert(io.popen('git branch --show-current'))
-  branch_fd:flush()
-  local branch = branch_fd:read('*all')
-  branch_fd:close()
+  local branch = get_current_branch()
 
   -- final commit
   os.execute("git add .")
@@ -47,5 +53,12 @@ local function merge_draft()
   vim.cmd('DiffviewOpen')
 end
 
+local function abandon_draft()
+  local branch = get_current_branch()
+  os.execute("git switch main")
+  os.execute(string.format("git branch -D %s", branch))
+end
+
 vim.api.nvim_create_user_command('DraftNew', new_draft, {})
 vim.api.nvim_create_user_command('DraftMerge', merge_draft, {})
+vim.api.nvim_create_user_command('DraftAbandon', abandon_draft, {})
