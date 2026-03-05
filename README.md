@@ -29,21 +29,30 @@ inputs = {
 You can then open the program by executing `writer`. The configuration is behind it's own
 name so that you are completely able to still have your overengineered `nvim` config :)
 
+## Drafts
+
+The core idea of this config is to operate on "drafts" (similar to [ellipsus](https://ellipsus.com)).
+Drafts are nothing fancy — just git branches :) You can create a new draft by
+executing `:DraftNew`. There, you can make your changes. When you are done, execute
+`:DraftMerge`. This will automatically merge the draft and show you a diff view
+of the changes made so you can easily do some final adjustments.
+
 ## Plugins
 
 This project installs various plugins:
 
-- [Goyo](https://github.com/junegunn/goyo.vim)
-- [Twilight](https://github.com/folke/twilight.nvim)
-- [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
-- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (with all available grammars)
-- [Fugitive](https://github.com/tpope/vim-fugitive)
-- [Yazi](https://github.com/mikavilpas/yazi.nvim)
 - [Airline](https://github.com/vim-airline/vim-airline)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Web Devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- [Flash](https://github.com/folke/flash.nvim)
 - [Dashboard](https://github.com/nvimdev/dashboard-nvim)
+- [Diffview](https://github.com/sindrets/diffview.nvim)
+- [Flash](https://github.com/folke/flash.nvim)
+- [Fugitive](https://github.com/tpope/vim-fugitive)
+- [Goyo](https://github.com/junegunn/goyo.vim)
+- [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (with all available grammars)
+- [Twilight](https://github.com/folke/twilight.nvim)
+- [Web Devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [Yazi](https://github.com/mikavilpas/yazi.nvim)
 
 ## Keymap
 
@@ -62,3 +71,4 @@ This project installs various plugins:
 - [ ] Integrate automated pandoc export
 - [ ] Shortcuts for git (new branch for draft and merging)
 - [ ] Maybe find a good option for inline comments (could be great for editing)
+- [ ] [Diataxis](https://diataxis.fr/) based documentation
