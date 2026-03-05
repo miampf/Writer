@@ -17,4 +17,6 @@
     autocmd! User GoyoEnter TwilightEnable
     autocmd! User GoyoLeave TwilightDisable
   '';
+
+  extraConfigLua = builtins.readFile ./extra_config.lua;
 }

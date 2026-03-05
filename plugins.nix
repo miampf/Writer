@@ -12,6 +12,7 @@
   telescope.enable = true;
   web-devicons.enable = true;
   flash.enable = true;
+  diffview.enable = true;
   dashboard = {
     enable = true;
     settings.config = {

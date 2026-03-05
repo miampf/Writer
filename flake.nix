@@ -13,10 +13,16 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
-      perSystem = { config, self', inputs', pkgs, system, ... }: {
-        packages.default = pkgs.writeShellScriptBin "writer" ''
-          exec -a $0 ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim $@
+      perSystem = { pkgs, system, ... }: {
+        packages.default = pkgs.writeShellApplication {
+          name = "writer";
+          runtimeInputs = with pkgs; [
+            git
+          ];
+          text = ''
+          exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"
         '';
+        };
       };
     };
 }
