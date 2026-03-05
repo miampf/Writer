@@ -21,8 +21,8 @@
             pandoc
           ];
           text = ''
-          exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"
-        '';
+            exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"
+          '';
         };
       };
     };
