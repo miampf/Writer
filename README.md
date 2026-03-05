@@ -47,14 +47,14 @@ This project installs various plugins:
 
 ## Keymap
 
-|Mode|Key     |Action                                     |
-|----|--------|-------------------------------------------|
-|n   |s       |jump with flash                            |
-|n   |S       |use flash with treesitter                  |
-|n   |<space>f|open yazi (file viewer) at the current file|
-|n   |<space>d|open yazi at the current working directory |
-|n   |<space>s|toggle yazi with its latest state          |
-|n   |<space>z|toggle focus mode (Goyo and Twilight)      |
+|Mode|Key       |Action                                     |
+|----|----------|-------------------------------------------|
+|n   |s         |jump with flash                            |
+|n   |S         |use flash with treesitter                  |
+|n   |\<space\>f|open yazi (file viewer) at the current file|
+|n   |\<space\>d|open yazi at the current working directory |
+|n   |\<space\>s|toggle yazi with its latest state          |
+|n   |\<space\>z|toggle focus mode (Goyo and Twilight)      |
 
 ## What is left to do?
 
