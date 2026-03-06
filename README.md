@@ -37,6 +37,13 @@ executing `:DraftNew`. There, you can make your changes. When you are done, exec
 `:DraftMerge`. This will automatically merge the draft and show you a diff view
 of the changes made so you can easily do some final adjustments.
 
+## Exporting
+
+This project integrates with [pandoc](https://pandoc.org/) for exporting a folder
+to PDF, DOCX or a singular markdown file. To use this, just execute
+`:ExportPDF <directory>` (or `ExportDOCX`/`ExportMD`) and an `export.{pdf,docx,md}`
+file will be generated.
+
 ## Plugins
 
 This project installs various plugins:
@@ -57,14 +64,15 @@ This project installs various plugins:
 
 ## Keymap
 
-|Mode|Key       |Action                                     |
-|----|----------|-------------------------------------------|
-|n   |s         |jump with flash                            |
-|n   |S         |use flash with treesitter                  |
-|n   |\<space\>f|open yazi (file viewer) at the current file|
-|n   |\<space\>d|open yazi at the current working directory |
-|n   |\<space\>s|toggle yazi with its latest state          |
-|n   |\<space\>z|toggle focus mode (Goyo and Twilight)      |
+|Mode|Key       |Action                                           |
+|----|----------|-------------------------------------------------|
+|n   |s         |jump with flash                                  |
+|n   |S         |use flash with treesitter                        |
+|n   |\<space\>f|open yazi (file viewer) at the current file      |
+|n   |\<space\>d|open yazi at the current working directory       |
+|n   |\<space\>s|toggle yazi with its latest state                |
+|n   |\<space\>z|toggle focus mode (Goyo and Twilight)            |
+|n   |\<space\>b|show obsidian-style backlinks to current document|
 
 ## What is left to do?
 
