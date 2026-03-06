@@ -74,6 +74,13 @@ This project installs various plugins:
 |n   |\<space\>z|toggle focus mode (Goyo and Twilight)            |
 |n   |\<space\>b|show obsidian-style backlinks to current document|
 
+## Contributing
+
+If you find this project useful and want to help make it more flexible,
+feel free to create issues for feature requests or bugs, or even create
+PRs yourself! I can't promise that I'll handle them super fast, but I'll
+try :D
+
 ## What is left to do?
 
 - [ ] Make things configurable with nix options
