@@ -13,6 +13,17 @@
   web-devicons.enable = true;
   flash.enable = true;
   diffview.enable = true;
+  blink-cmp.enable = true;
+  obsidian = {
+    enable = true;
+    settings.legacy_commands = false;
+    settings.workspaces = [
+      {
+        name = "Documents";
+        path = "~/Documents";
+      }
+    ];
+  };
   dashboard = {
     enable = true;
     settings.config = {

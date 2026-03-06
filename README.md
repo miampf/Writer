@@ -47,6 +47,7 @@ This project installs various plugins:
 - [Flash](https://github.com/folke/flash.nvim)
 - [Fugitive](https://github.com/tpope/vim-fugitive)
 - [Goyo](https://github.com/junegunn/goyo.vim)
+- [Obsidian-nvim](https://github.com/obsidian-nvim/obsidian.nvim)
 - [Render Markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (with all available grammars)

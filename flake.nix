@@ -17,8 +17,10 @@
         packages.default = pkgs.writeShellApplication {
           name = "writer";
           runtimeInputs = with pkgs; [
+            fd
             git
             pandoc
+            ripgrep
           ];
           text = ''
             exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"

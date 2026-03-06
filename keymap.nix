@@ -40,4 +40,11 @@
     options.silent = true;
     action = "<cmd>Goyo<cr>";
   }
+
+  # obsidian
+  {
+    mode = "n";
+    key = "<leader>b";
+    action = "<cmd>Obsidian backlinks<cr>";
+  }
 ]
