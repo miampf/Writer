@@ -68,7 +68,7 @@ This project installs various plugins:
 ## What is left to do?
 
 - [ ] Make things configurable with nix options
-- [ ] Integrate automated pandoc export
+- [x] Integrate automated pandoc export
 - [x] Shortcuts for git (new branch for draft and merging)
 - [ ] Maybe find a good option for inline comments (could be great for editing)
 - [ ] [Diataxis](https://diataxis.fr/) based documentation
