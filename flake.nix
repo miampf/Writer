@@ -21,6 +21,7 @@
             git
             pandoc
             ripgrep
+            (texliveTeTeX.withPackages (ps: [ps.garamond-libre]))
           ];
           text = ''
             exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"

@@ -77,7 +77,7 @@ local function pandoc_export(opts, format)
   local files_table = get_files_for_export(dir)
   local files = table.concat(files_table, " ")
 
-  os.execute(string.format("pandoc -s -o export.%s %s", format, files))
+  os.execute(string.format("pandoc --pdf-engine=xelatex -V fontfamily=garamondlibre -s -o export.%s %s", format, files))
 end
 
 local function export_pdf(opts)
