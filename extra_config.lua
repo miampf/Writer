@@ -20,6 +20,8 @@ local function string_random(length)
     return table_concat(random_string)
 end
 
+-- Draft stuff
+
 local function get_current_branch()
   local branch_fd = assert(io.popen('git branch --show-current'))
   branch_fd:flush()
@@ -59,6 +61,41 @@ local function abandon_draft()
   os.execute(string.format("git branch -D %s", branch))
 end
 
+-- Pandoc export stuff
+
+local function get_files_for_export(dir)
+  -- get all markdown files
+  return vim.fs.find(function(name, path)
+    return name:match('.*%.md$')
+  end, { limit = math.huge, type = 'file', path = dir })
+end
+
+local function pandoc_export(opts, format)
+  local dir = opts.fargs[1]
+  print(string.format("Exporting directory %s to export.%s", dir, format))
+
+  local files_table = get_files_for_export(dir)
+  local files = table.concat(files_table, " ")
+
+  os.execute(string.format("pandoc -s -o export.%s %s", format, files))
+end
+
+local function export_pdf(opts)
+  pandoc_export(opts, "pdf")
+end
+
+local function export_docx(opts)
+  pandoc_export(opts, "docx")
+end
+
+local function export_md(opts)
+  pandoc_export(opts, "md")
+end
+
 vim.api.nvim_create_user_command('DraftNew', new_draft, {})
 vim.api.nvim_create_user_command('DraftMerge', merge_draft, {})
 vim.api.nvim_create_user_command('DraftAbandon', abandon_draft, {})
+
+vim.api.nvim_create_user_command('ExportPDF', export_pdf, { nargs = '+' })
+vim.api.nvim_create_user_command('ExportDOCX', export_docx, { nargs = '+' })
+vim.api.nvim_create_user_command('ExportMD', export_md, { nargs = '+' })
