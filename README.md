@@ -71,6 +71,7 @@ environment.systemPackages = [
 This project installs various plugins:
 
 - [Airline](https://github.com/vim-airline/vim-airline)
+- [Autoclose](https://github.com/m4xshen/autoclose.nvim)
 - [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 - [Diffview](https://github.com/sindrets/diffview.nvim)
 - [Flash](https://github.com/folke/flash.nvim)

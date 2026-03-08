@@ -14,6 +14,7 @@
   flash.enable = true;
   diffview.enable = true;
   blink-cmp.enable = true;
+  autoclose.enable = true;
   obsidian = {
     enable = true;
     settings.legacy_commands = false;
