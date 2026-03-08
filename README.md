@@ -44,6 +44,28 @@ to PDF, DOCX or a singular markdown file. To use this, just execute
 `:ExportPDF <directory>` (or `ExportDOCX`/`ExportMD`) and an `export.{pdf,docx,md}`
 file will be generated.
 
+## Configuration
+
+You can configure writer with nixvims `extend` functionality:
+
+```nix
+environment.systemPackages = [
+  (inputs.writer.${system}.default.override {
+    package = inputs.writer.${system}.nvim.extend {
+      colorschemes.everforest.enable = lib.mkForce false;
+      colorschemes.catppuccin.enable = true;
+      
+      plugins.obsidian.settings.workspaces = [
+          {
+            name = "Writing";
+            path = "~/Documents/Writing";
+          }
+        ];
+      }
+  });
+]
+```
+
 ## Plugins
 
 This project installs various plugins:
@@ -83,7 +105,7 @@ try :D
 
 ## What is left to do?
 
-- [ ] Make things configurable with nix options
+- [x] Make things configurable
 - [x] Integrate automated pandoc export
 - [x] Shortcuts for git (new branch for draft and merging)
 - [ ] Maybe find a good option for inline comments (could be great for editing)
