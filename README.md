@@ -50,8 +50,8 @@ You can configure writer with nixvims `extend` functionality:
 
 ```nix
 environment.systemPackages = [
-  (inputs.writer.${system}.default.override {
-    package = inputs.writer.${system}.nvim.extend {
+  (inputs.writer.packages.${system}.default.override {
+    package = inputs.writer.packages.${system}.nvim.extend {
       colorschemes.everforest.enable = lib.mkForce false;
       colorschemes.catppuccin.enable = true;
       
