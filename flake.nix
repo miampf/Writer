@@ -13,7 +13,7 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
-      perSystem = { pkgs, system, ... }: {
+      perSystem = { self', pkgs, system, ... }: {
         packages.default = pkgs.writeShellApplication {
           name = "writer";
           runtimeInputs = with pkgs; [
@@ -24,9 +24,11 @@
             (texliveTeTeX.withPackages (ps: [ps.garamond-libre]))
           ];
           text = ''
-            exec -a "$0" ${inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config.nix)}/bin/nvim "$@"
+            exec -a "$0" ${self'.packages.nvim}/bin/nvim "$@"
           '';
         };
+
+        packages.nvim = inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./nix/config.nix);
       };
     };
 }

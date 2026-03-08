@@ -18,5 +18,11 @@
     autocmd! User GoyoLeave TwilightDisable
   '';
 
-  extraConfigLua = builtins.readFile ./extra_config.lua;
+  extraConfigLua = builtins.readFile ../lua/extra_config.lua;
+
+  extraFiles = {
+    "lua/helpers.lua".source = ../lua/helpers.lua;
+    "lua/export.lua".source = ../lua/export.lua;
+    "lua/drafts.lua".source = ../lua/drafts.lua;
+  };
 }
